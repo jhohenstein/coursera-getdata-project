@@ -6,6 +6,10 @@
 #   This script is the "master" script that runs the analysis
 #   This script assumes it is being run in the directory where it is found.
 
+# Imports
+library(dplyr)
+
+
 # Load the two data sets (test and train) and concatenate them
 #
 # @return concatenated data set
@@ -123,8 +127,9 @@ loadAndTidyData <- function(){
   labels <- loadLabels()
   colnames(data) <- labels
   
-  # Filter columns to only mean and standard deviation
-  data <- data[,grep("[mM]ean|[Ss]std",labels)]
+  # Filter columns to only mean and standard deviation, do not include angle() measures
+  filteredLabels <- labels[intersect(grep("^angle",labels,invert=TRUE), grep("[mM]ean|[sS]td",labels))]
+  data <- data[,filteredLabels]
   
   # Load activityIds for the data and append
   message("Loading activities")
@@ -140,6 +145,23 @@ loadAndTidyData <- function(){
   # Join the activity names to the data by Id
   data <- merge(data,activities,by="activityId")
   
-  # TODO
-  data
+  # Generate the tidy summary data set
+  createSummaryByActivityAndSubject(data)
 }
+
+# Main
+#
+# Do the tidying and generate the data set
+main <- function() {
+  if(!file.exists("data/"))
+    error("It appears you are in the wrong directory.")
+
+  tidy <- loadAndTidyData()
+  
+  message("Writing file with tidy data.")
+  write.table(file="tidy.txt",tidy)
+  
+}
+
+# Upon sourcing this file, run it
+main()
