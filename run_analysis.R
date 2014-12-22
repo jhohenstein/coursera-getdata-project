@@ -16,8 +16,8 @@ library(dplyr)
 loadData <- function() {
   
   files <- c(
-    "./data/UCI HAR Dataset/test/X_test.txt",
-    "./data/UCI HAR Dataset/train/X_train.txt"
+    "./data/test/X_test.txt",
+    "./data/train/X_train.txt"
   )
   
   # Check that the files exist
@@ -42,8 +42,8 @@ loadData <- function() {
 # @return subjects
 loadSubjects <- function(){  
   files <- c(
-    "./data/UCI HAR Dataset/test/subject_test.txt",
-    "./data/UCI HAR Dataset/train/subject_train.txt"
+    "./data/test/subject_test.txt",
+    "./data/train/subject_train.txt"
   )
   
   # Check that the files exist
@@ -70,7 +70,7 @@ loadSubjects <- function(){
 #
 # @return array of labels in the correct order
 loadLabels <- function() {
-  fileName <- "./data/UCI HAR Dataset/features.txt"
+  fileName <- "./data/features.txt"
   
   if(!file.exists(fileName))
     error(paste("Labels file (",fileName,") was not found where expected.",sep=FALSE))
@@ -87,7 +87,7 @@ loadLabels <- function() {
 #
 # @return activities, a data frame with 2 columns, the first the PK, the second the label
 loadActivities <- function() {
-  activities <- read.csv("data/UCI HAR Dataset/activity_labels.txt",sep=" ",header=FALSE,stringsAsFactors=FALSE)
+  activities <- read.csv("data/activity_labels.txt",sep=" ",header=FALSE,stringsAsFactors=FALSE)
   message("Activity data set structure after loading:")
   message(str(activities))
   colnames(activities) <- c("activityId","activityName")
@@ -101,8 +101,8 @@ loadActivities <- function() {
 # @return activity keys in the same order as loadData()
 loadDataActivities <- function() {
   files <- c(
-    "./data/UCI HAR Dataset/test/y_test.txt",
-    "./data/UCI HAR Dataset/train/y_train.txt"
+    "./data/test/y_test.txt",
+    "./data/train/y_train.txt"
   )
   
   # Check that the files exist
@@ -196,5 +196,4 @@ main <- function() {
 }
 
 # Upon sourcing this file, run it
-# TODO
-# main()
+main()

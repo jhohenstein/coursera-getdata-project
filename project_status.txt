@@ -27,7 +27,7 @@ o createSummaryByActivityAndSubject
 	- Replace column names
 		- surround measures by mean()
 	- Counts
-		- 30 subjects X 6 activities ~= 180 
+		- 30 subjects X 6 activities ~= 180 x 82 (79 + 3)
 o loadAndTidyData
 o main
 o Readme
