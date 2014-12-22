@@ -1,13 +1,13 @@
-= README for Getting and Cleaning Data - Course Project
+# README for Getting and Cleaning Data - Course Project
 
 The purpose of this project is to demonstrate the ability to manipulate real-world data sets using the R and the tools learned to date in the Coursera - Johns Hopkins Data Science Signature Track of courses.
 
 
-== Usage
+## Usage
 
 When "run_analysis.R" is sourced, it immediately runs to load the source data, compute and then output the tidy data set requested in the assignment.
 
-== Version of software used
+## Version of software used
 
 The analysis was written and performed under Ubuntu. The following is the output of "uname -a" :
 
@@ -31,7 +31,7 @@ Following is the output of "sessionInfo()" in R where the analysis was written a
 
 It uses the "dplyr" package version "dplyr_0.3.0.2". 
 
-== Files
+## Files
 
 		README.me
 
@@ -58,7 +58,7 @@ The original zip file containing the data set.
 
 A directory containing the extracted UCI HAR Dataset. The data set contains its own README and feature information.
 
-== Summary of Manipulations
+## Summary of Manipulations
 
 The following pseudocode follows loadAndTidyData() with the exception of writing the final tidy data file.
 

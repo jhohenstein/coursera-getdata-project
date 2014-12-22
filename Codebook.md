@@ -1,6 +1,6 @@
-= Codebook for Getting and Cleaning Data - Course Project
+# Codebook for Getting and Cleaning Data - Course Project
 
-== Class variables
+## Class variables
 
 The following columns present the classes or groups for the summarized data present in "tidy.txt".
 
@@ -8,7 +8,7 @@ The following columns present the classes or groups for the summarized data pres
 * activityName : the text name for the activity.
 * subjectid : the unique identifier of the subject who performed the activity.
 
-== Measurements
+## Measurements
 
 The original accelerometer data can be found in the "./data" directory. 
 
