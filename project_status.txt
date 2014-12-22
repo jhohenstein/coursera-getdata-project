@@ -1,0 +1,34 @@
+o loadData
+	- Check that the row and column counts are correct
+		- Test : 2947 x 561
+		- Train : 7352 x 561
+o loadLabels
+	- Check that the row and column counts are correct
+		- 561 x 2
+o Filter the labels to only those with "mean" or "std" and not including those with "angle"
+o loadSubjects
+	- Check that the row and column counts are correct
+		- Test : 2947 x 1
+		- Train : 7352 x 1
+o loadActivities
+	- Check that the row and column counts are correct
+		- 6x2
+o loadDataActivities
+	- Check that the row and column counts are correct
+		- Test : 2947 x 1
+		- Train : 7352 x 1
+o createSummaryByActivityAndSubject
+	- Group by the category columns
+		- activityId
+		- activityName
+		- subjectId
+	- Summarize
+		- Means in all other columns
+	- Replace column names
+		- surround measures by mean()
+	- Counts
+		- 30 subjects X 6 activities ~= 180 
+o loadAndTidyData
+o main
+o Readme
+o Codebook
