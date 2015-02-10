@@ -44,7 +44,7 @@ The following columns present the classes or groups for the summarized data pres
 
 * activityId : the unique identifier for the activity the subject performed (e.g. WALKING, RUNNING, ...)
 * activityName : the text name for the activity.
-* subjectid : the unique identifier of the subject who performed the activity.
+* subjectId : the unique identifier of the subject who performed the activity.
 
 ## Numeric Variables
 
