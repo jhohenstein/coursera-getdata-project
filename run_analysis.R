@@ -191,7 +191,7 @@ main <- function() {
   tidy <- loadAndTidyData()
   
   message("Writing file with tidy data.")
-  write.table(file="tidy.txt",tidy)
+  write.table(file="tidy.txt",tidy,row.names=FALSE)
   
 }
 
